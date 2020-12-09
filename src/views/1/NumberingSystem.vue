@@ -25,5 +25,28 @@ export default class NumberingSystem extends Vue
     fromBases = "2, 8, 10, 16";
     toBases = "2, 8, 10, 16";
 
+    n: number;
+    fromText: string;
+    toText: string;
+
+    revealAns = false;
+
+
+    newQuestion()
+    {
+        // Generate target number
+        this.n = randInt(0, 512)
+
+        const fb = this.fromBases.split(',').map(it => +it);
+        const tb = this.toBases.split(',').map(it => +it);
+        const from = fb[Math.floor(Math.random() * fb.length)]
+        const to = tb[Math.floor(Math.random() * tb.length)]
+
+        this.fromText = this.n.toString(from).toUpperCase()
+        this.toText = this.n.toString(to).toUpperCase()
+
+        this.question = `Can you convert base-${from} number "${this.fromText}" to base-${to}?`
+        this.revealAns = false;
+    }
 }
 </script>
