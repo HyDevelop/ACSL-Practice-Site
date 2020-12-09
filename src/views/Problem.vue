@@ -12,3 +12,12 @@ export default class Problem extends Vue
 
 }
 </script>
+
+<style lang="scss">
+.label
+{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: dimgray;
+}
+</style>
