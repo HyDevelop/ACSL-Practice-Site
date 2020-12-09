@@ -16,6 +16,8 @@
         <div class="label">Your answer: </div>
         <el-input placeholder="Answer" v-model="answer" :change="checkAns"></el-input>
 
+        <el-button style="margin-top: 20px;" type="primary" plain @click="checkAns">Check Answer</el-button>
+
     </div>
 </template>
 
