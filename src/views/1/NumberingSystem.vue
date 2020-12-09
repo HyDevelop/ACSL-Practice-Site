@@ -59,5 +59,17 @@ export default class NumberingSystem extends Vue
         this.question = `Can you convert base-${from} number "${this.fromText}" to base-${to}?`
         this.revealAns = false;
     }
+
+    checkAns()
+    {
+        if (this.answer.trim().toUpperCase() == this.toText.trim())
+        {
+            this.$message({message: 'Yay! Correct!', type: 'success'});
+        }
+        else
+        {
+            this.$message.error('Nope');
+        }
+    }
 }
 </script>
