@@ -8,6 +8,8 @@
         <div class="label">To bases: </div>
         <el-input placeholder="To bases" v-model="toBases"></el-input>
 
+        <el-button style="margin-top: 20px;" type="primary" plain @click="newQuestion">New Question</el-button>
+
         <div class="label">Question: </div>
         <div class="question-text">{{question}}</div>
 
