@@ -13,6 +13,9 @@
         <div class="label">Question: </div>
         <div class="question-text">{{question}}</div>
 
+        <div class="label">Your answer: </div>
+        <el-input placeholder="Answer" v-model="answer" :change="checkAns"></el-input>
+
     </div>
 </template>
 
@@ -30,6 +33,8 @@ export default class NumberingSystem extends Vue
     n: number;
     fromText: string;
     toText: string;
+
+    answer = '';
 
     revealAns = false;
 
