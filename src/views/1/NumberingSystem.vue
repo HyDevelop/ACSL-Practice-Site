@@ -18,6 +18,10 @@
 
         <el-button style="margin-top: 20px;" type="primary" plain @click="checkAns">Check Answer</el-button>
 
+        <el-button style="margin-top: 20px;" type="primary" plain @click="reveal">Reveal Answer</el-button>
+
+        <div class="label" v-if="revealAns">Revealed answer: {{toText}}</div>
+
     </div>
 </template>
 
@@ -72,6 +76,11 @@ export default class NumberingSystem extends Vue
         {
             this.$message.error('Nope');
         }
+    }
+
+    reveal()
+    {
+        this.revealAns = !this.revealAns;
     }
 }
 </script>
