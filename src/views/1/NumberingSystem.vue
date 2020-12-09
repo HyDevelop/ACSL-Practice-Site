@@ -31,6 +31,10 @@ export default class NumberingSystem extends Vue
 
     revealAns = false;
 
+    mounted()
+    {
+        this.newQuestion();
+    }
 
     newQuestion()
     {
