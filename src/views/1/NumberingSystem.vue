@@ -84,3 +84,10 @@ export default class NumberingSystem extends Vue
     }
 }
 </script>
+
+<style lang="scss">
+.question-text
+{
+    color: #ff79ad;
+}
+</style>
