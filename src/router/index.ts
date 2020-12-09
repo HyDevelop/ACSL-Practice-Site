@@ -1,5 +1,6 @@
 import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router'
 import Home from '../views/Home.vue'
+import Problem from '../views/Problem.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -16,9 +17,16 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     },
     {
-        path: '/1/numbering-systems',
-        name: 'Numbering Systems',
-        component: () => import('../views/1/NumberingSystem.vue')
+        path: '/1',
+        component: Problem,
+        children:
+        [
+            {
+                path: 'numbering-systems',
+                name: 'Numbering Systems',
+                component: () => import('../views/1/NumberingSystem.vue')
+            }
+        ]
     }
 ]
 
