@@ -12,11 +12,26 @@
 <style lang="scss">
 #app
 {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+    max-width: 500px;
+    margin: auto;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+
+    h1
+    {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitle
+    {
+        text-align: center;
+        color: #ff79ad;
+        margin-bottom: 21px;
+        a
+        {
+            color: inherit;
+        }
+    }
 }
 
 #nav
