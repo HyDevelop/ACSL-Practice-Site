@@ -63,7 +63,10 @@ export default class NumberingSystem extends Vue
         this.toText = this.n.toString(to).toUpperCase()
 
         this.question = `Can you convert base-${from} number "${this.fromText}" to base-${to}?`
+
+        // Clear answer
         this.revealAns = false;
+        this.answer = ''
     }
 
     checkAns()
