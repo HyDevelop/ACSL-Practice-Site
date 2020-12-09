@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div class="home">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <h1>ACSL Practice Site</h1>
+        <div>
+            There's nothing decorative for this site. It's just a practice problem site specifically for the ACSL topics made by <a href="https://github.com/hykilpikonna">Hykilpikonna</a>.
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import {Options, Vue} from 'vue-class-component'; // @ is an alias to /src
 
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+@Options({components: {}})
+export default class Home extends Vue
+{
+
+}
 </script>
