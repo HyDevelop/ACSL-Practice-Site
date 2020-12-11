@@ -55,5 +55,9 @@ export default class Recursion extends Problem
             `    return f(x ${gInside.op} ${gInside.val}) ${gOutside.op} ${gOutside.val}\n` +
             `</code></pre><el-switch></el-switch>`
         this.answer = ""
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        setTimeout(() => Prism.highlightAll(), 100);
     }
 }
