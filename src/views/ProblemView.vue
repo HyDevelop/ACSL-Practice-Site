@@ -8,10 +8,8 @@
         </div>
         <el-button style="margin-top: 20px;" plain @click="updateQuestion">New Question</el-button>
 
-        <router-view></router-view>
-
         <div class="label">Question: </div>
-        <div class="question-text">{{ question }}</div>
+        <div class="question-text" v-html="question"></div>
 
         <div class="label">Your answer: </div>
         <el-input placeholder="Answer" v-model="answer" :change="checkAns"></el-input>
