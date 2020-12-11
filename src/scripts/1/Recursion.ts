@@ -40,7 +40,7 @@ export default class Recursion extends Problem
             {op: '-', val: randIntInclusive(1, 10)},
         ])
 
-        let initValue = Math.max(ending - randIntInclusive(0, 2), 0)
+        let initValue = Math.max(ending - randIntInclusive(0, 2), 1)
         for (let i = 0; i < recursions; i++)
         {
             initValue = inverseFunctions[gInside.op](initValue, gInside.val)
