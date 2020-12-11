@@ -27,8 +27,9 @@
 import {Vue, prop} from 'vue-class-component';
 import Problem from "@/scripts/Problem";
 import NumberingSystem from "@/scripts/1/NumberingSystem";
+import Recursion from "@/scripts/1/Recursion";
 
-const problems = [new NumberingSystem()]
+const problems = [new NumberingSystem(), new Recursion()]
 
 class ProblemProps
 {

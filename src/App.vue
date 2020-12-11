@@ -4,6 +4,8 @@
         |
         <router-link to="/problem/0">Numbering Systems</router-link>
         |
+        <router-link to="/problem/1">Recursion</router-link>
+        |
         <router-link to="/about">About</router-link>
     </div>
     <router-view/>
