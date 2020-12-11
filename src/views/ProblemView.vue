@@ -8,6 +8,18 @@
         </div>
 
         <router-view></router-view>
+
+        <div class="label">Question: </div>
+        <div class="question-text">{{ prob.question }}</div>
+
+        <div class="label">Your answer: </div>
+        <el-input placeholder="Answer" v-model="answer" :change="checkAns"></el-input>
+
+        <el-button style="margin-top: 20px;" type="primary" plain @click="checkAns">Check Answer</el-button>
+
+        <el-button style="margin-top: 20px;" type="primary" plain @click="reveal">Reveal Answer</el-button>
+
+        <div class="label" v-if="revealAns">Revealed answer: {{ prob.answer }}</div>
     </div>
 </template>
 
@@ -18,6 +30,25 @@ import Problem from "@/scripts/Problem";
 export default class ProblemView extends Vue
 {
     prob: Problem
+
+    answer = ''
+    revealAns = false
+
+    mounted()
+    {
+        this.prob.newQuestion();
+    }
+
+    checkAns()
+    {
+        if (this.prob.checkAnswer(this.answer)) alert('Yay! Correct!');
+        else alert('Nope');
+    }
+
+    reveal()
+    {
+        this.revealAns = !this.revealAns;
+    }
 }
 </script>
 
