@@ -59,4 +59,9 @@ export default class ProblemView extends Vue
     margin-bottom: 5px;
     color: dimgray;
 }
+
+.question-text
+{
+    color: #ff79ad;
+}
 </style>
