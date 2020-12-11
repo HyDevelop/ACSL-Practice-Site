@@ -1,6 +1,5 @@
 import Problem from "@/scripts/Problem";
 import {rand, randInt} from "@/scripts/utils";
-import {getRandomInt} from "element-plus/lib/utils/util";
 
 export default class NumberingSystem extends Problem
 {
