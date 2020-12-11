@@ -36,12 +36,11 @@ export default class NumberingSystem extends Vue
     fromBases = "2, 8, 10, 16";
     toBases = "2, 8, 10, 16";
 
-    n: number;
-    fromText: string;
-    toText: string;
+    n = -1;
+    fromText = '';
+    toText = '';
 
     answer = '';
-
     revealAns = false;
 
     mounted()
@@ -73,11 +72,11 @@ export default class NumberingSystem extends Vue
     {
         if (this.answer.trim().toUpperCase() == this.toText.trim())
         {
-            this.$message({message: 'Yay! Correct!', type: 'success'});
+            alert('Yay! Correct!');
         }
         else
         {
-            this.$message.error('Nope');
+            alert('Nope');
         }
     }
 
