@@ -2,7 +2,8 @@
 export default abstract class Problem
 {
     abstract title: string;
-    options: ProblemOption[] = []
+    abstract options: ProblemOption[]
+    
     question = ""
     answer: string | number = ""
 
