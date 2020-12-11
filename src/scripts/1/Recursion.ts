@@ -54,6 +54,8 @@ export default class Recursion extends Problem
                     return f(x ${gInside.op} ${gInside.val}) ${gOutside.op} ${gOutside.val}
             }
             `
+        this.answer = eval(code + `\n f(${initValue})`)
+
         this.question = dedent`
             What do you think f(${initValue}) is for the program below?<br>
             <br><pre><code class="language-js">${code}</code></pre>`
