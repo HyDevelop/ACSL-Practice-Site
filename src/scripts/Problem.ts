@@ -1,8 +1,9 @@
 
 export default abstract class Problem
 {
-    question = "";
-    answer: string | number = "";
+    options: ProblemOption[] = []
+    question = ""
+    answer: string | number = ""
 
     /**
      * Generate a new question
@@ -27,4 +28,10 @@ export default abstract class Problem
             return (+ans).toFixed(2) == this.answer.toFixed(2);
         }
     }
+}
+
+export interface ProblemOption
+{
+    description: string;
+    value: string;
 }
