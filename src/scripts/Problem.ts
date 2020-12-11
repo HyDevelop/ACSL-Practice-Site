@@ -3,7 +3,7 @@ export default abstract class Problem
 {
     abstract title: string;
     abstract options: ProblemOption[]
-    
+
     question = ""
     answer: string | number = ""
 
