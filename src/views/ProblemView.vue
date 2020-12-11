@@ -43,12 +43,14 @@ export default class ProblemView extends Vue.with(ProblemProps)
     answer = ''
     revealAns = false
 
-    created()
+    created() { this.updateQuestion() }
+    beforeUpdate() { this.updateQuestion() }
+
+    updateQuestion()
     {
         const id = +this.id
-
         if (id >= problems.length) alert("The problem ID in your url doesn't exist 🤔")
-        
+
         this.prob = problems[id];
         console.log("hi")
         this.prob.newQuestion();
