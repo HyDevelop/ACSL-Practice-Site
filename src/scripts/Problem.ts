@@ -15,5 +15,16 @@ export default abstract class Problem
      * @param ans Answer
      * @return boolean Correct or not
      */
-    abstract checkAnswer(ans: string): boolean;
+    checkAnswer(ans: string): boolean
+    {
+        if (typeof(this.answer) == 'string')
+        {
+            return ans.trim().toLowerCase() == this.answer.trim().toLowerCase()
+        }
+        else
+        {
+            // Compare to two decimal places
+            return (+ans).toFixed(2) == this.answer.toFixed(2);
+        }
+    }
 }
