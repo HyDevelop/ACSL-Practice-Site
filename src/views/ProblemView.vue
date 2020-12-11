@@ -6,11 +6,12 @@
             <div class="label">{{ option.description }}</div>
             <el-input :placeholder="option.description" v-model="option.value"></el-input>
         </div>
+        <el-button style="margin-top: 20px;" plain @click="updateQuestion">New Question</el-button>
 
         <router-view></router-view>
 
         <div class="label">Question: </div>
-        <div class="question-text">{{ prob.question }}</div>
+        <div class="question-text">{{ question }}</div>
 
         <div class="label">Your answer: </div>
         <el-input placeholder="Answer" v-model="answer" :change="checkAns"></el-input>
@@ -38,6 +39,7 @@ class ProblemProps
 
 export default class ProblemView extends Vue.with(ProblemProps)
 {
+    question = ''
     prob!: Problem
 
     answer = ''
@@ -54,8 +56,11 @@ export default class ProblemView extends Vue.with(ProblemProps)
         if (id >= problems.length) alert("The problem ID in your url doesn't exist 🤔")
 
         this.prob = problems[id];
-        console.log("hi")
         this.prob.newQuestion();
+        this.question = this.prob.question
+
+        this.answer = ''
+        this.revealAns = false
     }
 
     checkAns()
