@@ -1,6 +1,6 @@
 import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router'
 import Home from '../views/Home.vue'
-import Problem from '../views/Problem.vue'
+import ProblemView from '../views/ProblemView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
     },
     {
         path: '/1',
-        component: Problem,
+        component: ProblemView,
         children:
         [
             {

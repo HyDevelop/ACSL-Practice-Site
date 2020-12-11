@@ -6,10 +6,11 @@
 
 <script lang="ts">
 import {Vue} from 'vue-class-component';
+import Problem from "@/scripts/Problem";
 
-export default class Problem extends Vue
+export default class ProblemView extends Vue
 {
-
+    prob: Problem
 }
 </script>
 
