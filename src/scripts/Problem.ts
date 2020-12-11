@@ -1,8 +1,7 @@
-type ProblemOptions = { [key: string]: string };
 
 export default abstract class Problem
 {
-    options: ProblemOptions = {}
+    options: ProblemOption[] = []
     question = ""
     answer: string | number = ""
 
@@ -29,4 +28,10 @@ export default abstract class Problem
             return (+ans).toFixed(2) == this.answer.toFixed(2);
         }
     }
+}
+
+export interface ProblemOption
+{
+    description: string;
+    value: string;
 }
