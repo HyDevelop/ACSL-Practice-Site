@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home" style="text-align: center">
         <img alt="Vue logo" src="../assets/logo.png">
         <h1>ACSL Practice Site</h1>
         <div>
