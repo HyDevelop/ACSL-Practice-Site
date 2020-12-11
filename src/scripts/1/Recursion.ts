@@ -1,5 +1,6 @@
 import Problem from "@/scripts/Problem";
 import {rand, randIntInclusive} from "@/scripts/utils";
+import dedent from 'dedent-js'
 
 // const functions: {[key: string]: (n: number, val: number) => number} = {
 //     '+': (n: number, val: number) => n + val,
@@ -40,21 +41,22 @@ export default class Recursion extends Problem
         ])
 
         let initValue = ending - randIntInclusive(0, 2)
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        for (const i in Array(recursions))
+        for (let i = 0; i < recursions; i++)
         {
             initValue = inverseFunctions[gInside.op](initValue, gInside.val)
         }
 
-        this.question =
-            `What do you think f(${initValue}) is for the program below?<br>` +
-            `<br><pre><code class="language-python">` +
-            `def f(x):\n` +
-            `    if x <= ${ending}:\n` +
-            `        return x\n` +
-            `    return f(x ${gInside.op} ${gInside.val}) ${gOutside.op} ${gOutside.val}\n` +
-            `</code></pre><el-switch></el-switch>`
-        this.answer = ""
+        const code = dedent`
+            function f(x) {
+                if (x <= ${ending})
+                    return x
+                else
+                    return f(x ${gInside.op} ${gInside.val}) ${gOutside.op} ${gOutside.val}
+            }
+            `
+        this.question = dedent`
+            What do you think f(${initValue}) is for the program below?<br>
+            <br><pre><code class="language-js">${code}</code></pre>`
 
         // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
