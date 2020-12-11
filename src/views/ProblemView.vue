@@ -24,18 +24,29 @@
 </template>
 
 <script lang="ts">
-import {Vue} from 'vue-class-component';
+import {Vue, prop} from 'vue-class-component';
 import Problem from "@/scripts/Problem";
+import NumberingSystem from "@/scripts/1/NumberingSystem";
 
-export default class ProblemView extends Vue
+const problems = [new NumberingSystem()]
+
+class ProblemProps
 {
-    prob: Problem
+    id = prop<string>({required: true})
+}
+
+export default class ProblemView extends Vue.with(ProblemProps)
+{
+    prob!: Problem
 
     answer = ''
     revealAns = false
 
-    mounted()
+    created()
     {
+        const id = +this.id
+        this.prob = problems[id];
+        console.log("hi")
         this.prob.newQuestion();
     }
 

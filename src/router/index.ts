@@ -17,16 +17,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     },
     {
-        path: '/1',
+        path: '/problem/:id',
         component: ProblemView,
-        children:
-        [
-            {
-                path: 'numbering-systems',
-                name: 'Numbering Systems',
-                component: () => import('../views/1/NumberingSystem.vue')
-            }
-        ]
+        props: true
     }
 ]
 
