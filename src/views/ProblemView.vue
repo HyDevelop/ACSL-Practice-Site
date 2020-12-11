@@ -1,5 +1,7 @@
 <template>
     <div class="problem">
+        <h1>{{ prob.title }}</h1>
+
         <div class="options" v-for="option in prob.options" :key="option.description">
             <div class="label">{{ option.description }}</div>
             <el-input :placeholder="option.description" v-model="option.value"></el-input>
