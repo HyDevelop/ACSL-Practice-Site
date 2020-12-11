@@ -2,7 +2,7 @@
 export default abstract class Problem
 {
     question = "";
-    answer = "";
+    answer: string | number = "";
 
     /**
      * Generate a new question
